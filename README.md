@@ -15,6 +15,7 @@ exit(json_encode([
 "msg" => Geetest::Error($postCaptcha['reason'])
 ]));
 }
+// Tích hợp khá dễ dàng và tiện lợi, đây là captcha bản free kéo/thả
 // Đoạn mã của bạn ở đây
 ```
 
