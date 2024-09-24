@@ -5,9 +5,9 @@
 ```php
 // POST TẤT CẢ THAM SỐ GEETEST XÁC MINH LÊN CaptchaValidator/Geetest.
 $postCaptcha = json_decode($initCaptcha->verify($_POST['lot_number'], $_POST['captcha_output'], $_POST['pass_token'], $_POST['gen_time']), true);
-// Sau đó file geetest.php sẽ gửi dữ liệu xác minh về geetest.
-// Và chúng ta sẽ nhận được kết quả trả về vào $postCaptcha từ $initCaptcha
-// Để nhận biết captcha xác minh thành công hay không, chi cần lấy res từ status Geetest trả ra success / error.
+// Sau đó file geetest.php sẽ gửi dữ liệu xác minh đến GeeTest.
+// Và chúng ta sẽ nhận được kết quả trả về lưu vào $postCaptcha từ object $initCaptcha
+// Để nhận biết captcha xác minh thành công hay không, chi cần lấy res từ status Geetest trả về success / error.
 // Code mẫu (đặt bên dưới $postCaptcha).
 if (isset($postCaptcha) && $postCaptcha['status'] !== 'success') { // Xác minh thất bại sẽ không được thông qua
 exit(json_encode([
