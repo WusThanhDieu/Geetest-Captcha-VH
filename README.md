@@ -9,13 +9,13 @@ $postCaptcha = json_decode($initCaptcha->verify($_POST['lot_number'], $_POST['ca
 // Và chúng ta sẽ nhận được kết quả trả về vào $postCaptcha từ $initCaptcha
 // Để nhận biết captcha xác minh thành công hay không, chi cần lấy res từ status Geetest trả ra success / error.
 // Code mẫu (đặt bên dưới $postCaptcha).
- if (isset($postCaptcha) && $postCaptcha['status'] !== 'success') { // Xác minh thất bại sẽ không được thông qua
-    exit(json_encode([
-        "status" => "error", // edit theo dự án của bạn
-        "msg" => Geetest::Error($postCaptcha['reason'])
-    ]));
-    }
-  // Đoạn mã của bạn ở đây
+if (isset($postCaptcha) && $postCaptcha['status'] !== 'success') { // Xác minh thất bại sẽ không được thông qua
+exit(json_encode([
+"status" => "error", // edit theo dự án của bạn
+"msg" => Geetest::Error($postCaptcha['reason'])
+]));
+}
+// Đoạn mã của bạn ở đây
 ```
 
 ## Demo
